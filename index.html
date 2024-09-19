@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+        <button id = "pixels">Reset</button>
+        <div id = "container"> </div>
+    <script>
+       
+        const container = document.querySelector("#container");
+        function createGrid(number){
+            container.style.height =`${number*10}px`;
+            container.style.width =`${number*10}px`;
+            for(let i = 0; i < number; i++){
+                const div = document.createElement("div");
+                for(let j = 0; j < number ; j++){
+                    const innerDiv = document.createElement("div");
+                    innerDiv.classList.add(`grid`);
+                    innerDiv.addEventListener("mouseover", ()=>{
+                        console.log("hello" );
+                        innerDiv.style.border ="5px solid black";
+                    })
+                    div.appendChild(innerDiv);
+                }
+                container.appendChild(div);
+            }
+        }
+        createGrid(16);
+        const btn = document.querySelector("#pixels");
+        btn.addEventListener("click",()=>{
+            container.replaceChildren();
+            let size = 0;
+            do{
+            size = prompt("How many large do you want this etch&sketch to be? Please give me a number between 16-100");
+            }
+            while( size < 16 || size > 100);
+            createGrid(size);
+        })
+    </script>
+</body>
+</html>
