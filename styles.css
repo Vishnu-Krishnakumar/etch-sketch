@@ -1,0 +1,18 @@
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid red;
+    
+}
+.grid{
+    /* border: 5px solid blue; */
+    border:5px solid white;
+   
+    
+}
+/* .grid:hover{
+  
+    border:20px solid white;
+    
+} */
